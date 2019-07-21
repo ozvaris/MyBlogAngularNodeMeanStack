@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
 
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
 })
 
 export class ErrorComponent  {
-    messsage = 'An unkonown error occured!';
+    constructor(@Inject(MAT_DIALOG_DATA) public data: {message: string}) {}
+
 }
