@@ -6,17 +6,17 @@ import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
 import { AngularMaterialModule } from "../angular-material.module";
 
+
 @NgModule({
     declarations: [
-
         LoginComponent,
-        SignupComponent, 
-
+        SignupComponent,
     ],
     imports:[
         CommonModule,
         AngularMaterialModule,
-        FormsModule
+        FormsModule,
+        AuthRoutingModule
     ]
 })
 export class AuthModule{}
