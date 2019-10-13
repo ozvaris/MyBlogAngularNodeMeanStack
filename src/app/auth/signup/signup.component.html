@@ -6,6 +6,10 @@
       <mat-error *ngIf="usernameInput.invalid">Please enter a name.</mat-error>
     </mat-form-field>
     <mat-form-field>
+      <input matInput name="usersurename" ngModel type="text" placeholder="Sure Name" #usersurenameInput="ngModel" required>
+      <mat-error *ngIf="usersurenameInput.invalid">Please enter a name.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
       <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
       <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
     </mat-form-field>
