@@ -8,20 +8,20 @@ import { Subscription } from "rxjs";
   templateUrl: "./signup.component.html",
   styleUrls: ["./signup.component.css"]
 })
-export class SignupComponent implements OnInit, OnDestroy{
+export class SignupComponent implements OnInit, OnDestroy {
   isLoading = false;
-  private authStatusSub : Subscription;
+  private authStatusSub: Subscription;
 
   constructor(public authService: AuthService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
       authStatus => {
         this.isLoading = false;
       }
     );
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.authStatusSub.unsubscribe();
   }
 
@@ -30,6 +30,7 @@ export class SignupComponent implements OnInit, OnDestroy{
       return;
     }
     this.isLoading = true;
-    this.authService.createUser(form.value.email, form.value.password);
+    // console.log(form.value);
+    this.authService.createUser(form.value.email, form.value.password, form.value.username, form.value.usersurename);
   }
 }
